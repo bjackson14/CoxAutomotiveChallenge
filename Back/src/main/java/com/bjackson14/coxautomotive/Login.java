@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "login")
 public class Login {
 
-    // Fiekds in database table
+    // Fields in database table
     @Id
     private String username;
     private String password;
