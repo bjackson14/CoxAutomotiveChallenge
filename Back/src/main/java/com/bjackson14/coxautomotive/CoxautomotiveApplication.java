@@ -8,5 +8,4 @@ public class CoxautomotiveApplication {
     public static void main(String[] args) {
         SpringApplication.run(CoxautomotiveApplication.class, args);
     }
-
 }
