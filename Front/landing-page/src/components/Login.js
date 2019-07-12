@@ -1,17 +1,29 @@
 import React from 'react';
+import './Login.css';
 
 const Login = (props) => (
-	<center>
-		<h1>{props.error}</h1>
-		<h1>Login</h1>
+	<div id="box">
 		<form>
-			Username:<input type="text" id="username" />
-			<br />
-			Password:<input type="text" id="password" />
-			<br />
-			<button type="button" onClick={() => props.onClick(document.getElementById('username').value, document.getElementById('password').value)}>Submit</button>
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="2"><center><h1>{props.message}</h1><h1 id="error">{props.error}</h1></center></td>
+					</tr>
+					<tr>
+						<td>Username:</td>
+						<td><input type="text" id="username" /></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type="text" id="password" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><button type="button" onClick={() => props.onClick(document.getElementById('username').value, document.getElementById('password').value)}>Submit</button></center></td>
+					</tr>
+				</tbody>
+			</table>
 		</form>
-	</center>
+	</div>
 )
 
 export default Login;

@@ -1,0 +1,12 @@
+#error {
+	color: red;
+}
+
+#box {
+	padding: 25vh 40vw;
+}
+
+table {
+	border: 1px solid black;
+	padding: 5vh 5vw;
+}

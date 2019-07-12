@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Login from './Login';
 import LatLng from './LatLng';
 
@@ -13,7 +12,7 @@ class App extends React.Component {
 		
 		this.state = {
 			// Controlls which component to load and props for component
-			page: <div><Login onClick={this.onLoginSubmit} error=""/></div>,
+			page: <div><Login onClick={this.onLoginSubmit} message="Login"/></div>,
 		};
 	}
 	
@@ -29,7 +28,7 @@ class App extends React.Component {
 					if (credentials.password === password || credentials.status !== 404)
 						this.setState({page: <div><LatLng onClick={this.onLatLngSubmit} message="Success" cityState=""/></div>});
 					else
-						this.setState({page: <div><Login onClick={this.onLoginSubmit} error="Login Error"/></div>});
+						this.setState({page: <div><Login onClick={this.onLoginSubmit} message="" error="Login Error"/></div>});
 						
 				});
 			// End fetch function
@@ -49,7 +48,7 @@ class App extends React.Component {
 				});
 		}
 		else
-			this.setState({page: <div><LatLng onClick={this.onLatLngSubmit} message="Input Error" cityState=""/></div>});
+			this.setState({page: <div><LatLng onClick={this.onLatLngSubmit} message="" error="Input Error" cityState=""/></div>});
 	}
 	
 	// Renders appropriate page
