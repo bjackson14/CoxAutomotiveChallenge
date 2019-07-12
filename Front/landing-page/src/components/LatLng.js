@@ -1,18 +1,16 @@
 import React from 'react';
-
-fetch("https://api.weather.gov/points/<lat_value>,<long_value>")
-	.then(res => res.json())
-	.then(json => console.log(json));
 	
-const LatLng = () => (
+const LatLng = (props) => (
 	<center>
+		<h1>{props.message}</h1>
 		<form>
-			Latitude:<input type="text" name="lat" />
+			Latitude:<input type="text" id="lat" />
 			<br />
-			Longitude:<input type="text" name="lng" />
+			Longitude:<input type="text" id="lng" />
 			<br />
-			<input type="submit" name="latlng" />
+			<button type="button" onClick={() => props.onClick(document.getElementById('lat').value, document.getElementById('lng').value)}>Submit</button>
 		</form>
+		<h2>{props.cityState}</h2>
 	</center>
 )
 
