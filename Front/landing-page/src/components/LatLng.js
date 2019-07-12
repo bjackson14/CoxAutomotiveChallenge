@@ -1,5 +1,9 @@
 import React from 'react';
 
+fetch("https://api.weather.gov/points/<lat_value>,<long_value>")
+	.then(res => res.json())
+	.then(json => console.log(json));
+	
 const LatLng = () => (
 	<center>
 		<form>

@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Login = () => (
+const Login = (props) => (
 	<center>
+		<h1>{props.error}</h1>
 		<h1>Login</h1>
 		<form>
-			Username:<input type="text" name="username" />
+			Username:<input type="text" id="username" />
 			<br />
-			Password:<input type="text" name="password" />
+			Password:<input type="text" id="password" />
 			<br />
-			<input type="submit" name="login" />
+			<button type="button" onClick={() => props.onClick(document.getElementById('username').value, document.getElementById('password').value)}>Submit</button>
 		</form>
 	</center>
 )
