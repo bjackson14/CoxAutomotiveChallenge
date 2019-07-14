@@ -6,10 +6,6 @@ class App extends React.Component {
 	constructor() {
 		super();
 		
-		// Bind "this" to function so fetch will see setState function
-		this.onLoginSubmit = this.onLoginSubmit.bind(this);
-		this.onLatLngSubmit = this.onLatLngSubmit.bind(this);
-		
 		this.state = {
 			// Controlls which component to load and props for component
 			page: <div><Login onClick={this.onLoginSubmit} message="Login"/></div>,
@@ -17,7 +13,7 @@ class App extends React.Component {
 	}
 	
 	// Runs when submit button on login page is clicked
-	onLoginSubmit(username, password) {
+	onLoginSubmit = (username, password) => {
 		// Checks if username and password was entered
 		if (username !== '' && password !== '') {
 			fetch('http://localhost:8080/getLogin/' + username)
@@ -38,7 +34,7 @@ class App extends React.Component {
 	}
 	
 	// Runs when submit button is on latlng page is clicked
-	onLatLngSubmit(lat, lng) {
+	onLatLngSubmit = (lat, lng) => {
 		if (lat !== '' && lng !== '') {
 			fetch('https://api.weather.gov/points/' + lat + ',' + lng)
 				.then(res => res.json())
