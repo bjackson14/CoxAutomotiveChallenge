@@ -16,7 +16,7 @@ Test files use ChromeDriver which can be found <a href="http://chromedriver.chro
 <br>
 Using React version 16.8.6
 
-<h1>Runnign the Application</h1>
+<h1>Running the Application</h1>
 <br>
 First run MySQL server
 <br>
