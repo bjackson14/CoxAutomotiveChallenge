@@ -15,3 +15,11 @@ Test files use ChromeDriver which can be found <a href="http://chromedriver.chro
 <h1>Front End Installation</h1>
 <br>
 Using React version 16.8.6
+
+<h1>Runnign the Application</h1>
+<br>
+First run MySQL server
+<br>
+Next, run Spring back end through IntelliJ
+<br>
+Last, run React front end by navigating to landing-page folder and run npm start
