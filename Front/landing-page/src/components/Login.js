@@ -23,9 +23,7 @@ const Login = (props) => (
 							<center>
 								<nav>
 									<Link to="/latlng">
-										<button type="button" onClick={() => {props.onClick(document.getElementById('username').value, document.getElementById('password').value);}}>
-											Submit
-										</button>
+										<button type="button" onClick={() => {props.onClick(document.getElementById('username').value, document.getElementById('password').value);}}>Submit</button>
 									</Link>
 								</nav>
 							</center>

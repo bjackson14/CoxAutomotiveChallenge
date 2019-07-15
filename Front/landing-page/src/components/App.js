@@ -41,11 +41,11 @@ class App extends React.Component {
 				.then(res => res.json())
 				.then(location => {
 					var cityState = location.properties.relativeLocation.properties.city + ', ' + location.properties.relativeLocation.properties.state;
-					this.setState({page: <div><LatLng onClick={this.onLatLngSubmit} message="Success" cityState={cityState}/></div>});
+					this.setState({latlng: <LatLng onClick={this.onLatLngSubmit} message="Success" cityState={cityState}/>});
 				});
 		}
 		else
-			this.setState({page: <div><LatLng onClick={this.onLatLngSubmit} message="" error="Input Error" cityState=""/></div>});
+			this.setState({latlng: <LatLng onClick={this.onLatLngSubmit} error="Input Error"/>});
 	}
 	
 	// Renders appropriate page
