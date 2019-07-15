@@ -7,7 +7,7 @@ const LatLng = (props) => (
 			<table>
 				<tbody>
 					<tr>
-						<td colspan="2"><center><h1 id="message">{props.message}</h1><h1 id="error">{props.error}</h1></center></td>
+						<td colSpan="2"><center><h1 id="message">{props.message}</h1><h1 id="error">{props.error}</h1></center></td>
 					</tr>
 					<tr>
 						<td>Latitude:</td>
@@ -18,10 +18,10 @@ const LatLng = (props) => (
 						<td><input type="text" id="lng" /></td>
 					</tr>
 					<tr>
-						<td colspan="2"><center><button type="button" onClick={() => props.onClick(document.getElementById('lat').value, document.getElementById('lng').value)}>Submit</button></center></td>
+						<td colSpan="2"><center><button type="button" onClick={() => props.onClick(document.getElementById('lat').value, document.getElementById('lng').value)}>Submit</button></center></td>
 					</tr>
 					<tr>
-						<td colspan="2"><h2>{props.cityState}</h2></td>
+						<td colSpan="2"><h2>{props.cityState}</h2></td>
 					</tr>
 				</tbody>
 			</table>

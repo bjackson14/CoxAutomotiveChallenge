@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Login from './Login';
 import LatLng from './LatLng';
 
@@ -7,8 +8,8 @@ class App extends React.Component {
 		super();
 		
 		this.state = {
-			// Controlls which component to load and props for component
-			page: <div><Login onClick={this.onLoginSubmit} message="Login"/></div>,
+			login: <Login onClick={this.onLoginSubmit} message="Login"/>,
+			latlng: <Login onClick={this.onLoginSubmit} message="Login"/>,
 		};
 	}
 	
@@ -21,16 +22,18 @@ class App extends React.Component {
 				.then(credentials => {
 					// Checks if password returned matches password enetered
 					// Checks for error which will return if username does not exist
-					if (credentials.password === password || credentials.status !== 404)
-						this.setState({page: <div><LatLng onClick={this.onLatLngSubmit} message="Success" cityState=""/></div>});
+					if (credentials.password === password || credentials.status !== 404) {
+						this.setState({latlng: <LatLng onClick={this.onLatLngSubmit} message="Success" />});
+						window.location = '/latlng';
+					}
 					else
-						this.setState({page: <div><Login onClick={this.onLoginSubmit} message="" error="Login Error"/></div>});
+						this.setState({login: <Login onClick={this.onLoginSubmit} error="Login Error"/>});
 						
 				});
 			// End fetch function
 		}
 		else
-			this.setState({page: <div><Login onClick={this.onLoginSubmit} error="Login Error"/></div>});
+			this.setState({login: <Login onClick={this.onLoginSubmit} error="Login Error"/>});
 	}
 	
 	// Runs when submit button is on latlng page is clicked
@@ -50,7 +53,16 @@ class App extends React.Component {
 	// Renders appropriate page
 	render() {
 		return(
-			this.state.page
+			<BrowserRouter>
+				<main>
+					<Route exact path="/" render={() => (
+						this.state.login
+					)} />
+					<Route path="/latlng" render={() => (
+						this.state.latlng
+					)} />
+				</main>
+			</BrowserRouter>
 		);
 	}
 }

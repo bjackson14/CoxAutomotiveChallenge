@@ -15,6 +15,8 @@ Test files use ChromeDriver which can be found <a href="http://chromedriver.chro
 <h1>Front End Installation</h1>
 <br>
 Using React version 16.8.6
+<br>
+Using react-router-dom version 5.0.1
 
 <h1>Running the Application</h1>
 <br>
