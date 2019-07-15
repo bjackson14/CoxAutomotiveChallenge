@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = (props) => (
@@ -18,7 +19,17 @@ const Login = (props) => (
 						<td><input type="text" id="password" /></td>
 					</tr>
 					<tr>
-						<td colSpan="2"><center><button type="button" onClick={() => props.onClick(document.getElementById('username').value, document.getElementById('password').value)}>Submit</button></center></td>
+						<td colSpan="2">
+							<center>
+								<nav>
+									<Link to="/latlng">
+										<button type="button" onClick={() => {props.onClick(document.getElementById('username').value, document.getElementById('password').value);}}>
+											Submit
+										</button>
+									</Link>
+								</nav>
+							</center>
+						</td>
 					</tr>
 				</tbody>
 			</table>

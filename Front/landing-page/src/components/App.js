@@ -9,7 +9,7 @@ class App extends React.Component {
 		
 		this.state = {
 			login: <Login onClick={this.onLoginSubmit} message="Login"/>,
-			latlng: <Login onClick={this.onLoginSubmit} message="Login"/>,
+			latlng: <Login onClick={this.onLoginSubmit} error="Login Error"/>,
 		};
 	}
 	
@@ -22,10 +22,8 @@ class App extends React.Component {
 				.then(credentials => {
 					// Checks if password returned matches password enetered
 					// Checks for error which will return if username does not exist
-					if (credentials.password === password || credentials.status !== 404) {
+					if (credentials.password === password || credentials.status !== 404)
 						this.setState({latlng: <LatLng onClick={this.onLatLngSubmit} message="Success" />});
-						window.location = '/latlng';
-					}
 					else
 						this.setState({login: <Login onClick={this.onLoginSubmit} error="Login Error"/>});
 						
@@ -54,14 +52,12 @@ class App extends React.Component {
 	render() {
 		return(
 			<BrowserRouter>
-				<main>
-					<Route exact path="/" render={() => (
-						this.state.login
-					)} />
-					<Route path="/latlng" render={() => (
-						this.state.latlng
-					)} />
-				</main>
+				<Route exact path="/" render={() => (
+					this.state.login
+				)} />
+				<Route path="/latlng" render={() => (
+					this.state.latlng
+				)} />
 			</BrowserRouter>
 		);
 	}
